@@ -4,18 +4,20 @@ class Species < SQLObject
   belongs_to :genus
   has_one_through :family, :genus, :family
 
-  self.finalize!
+  finalize!
 end
+
 
 class Genus < SQLObject
   belongs_to :family
   has_many :species
 
-  self.finalize!
+  finalize!
 end
+
 
 class Family < SQLObject
   has_many :genus
 
-  self.finalize!
+  finalize!
 end
