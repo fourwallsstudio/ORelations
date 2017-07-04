@@ -13,7 +13,7 @@ ORelations allows classes to extend `SQLObject` and inherit its features:
   `belongs_to`
   `has_many`
   `has_one_through`
-- the `SQLObject#all` method returns and array of all of a class's instances.
+- the `SQLObject#all` method returns and array of all a class's instances.
 - the `SQLObject#save` method will update or insert and instance of a
   class based on whether an `id` is present.
 - Calling `SQLObject#finalize!` at the end of a class will create getter
