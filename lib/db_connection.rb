@@ -16,11 +16,11 @@ class DBConnection
 
   def self.reset
     commands = [
-      "rm '#{SPECIES_DB_FILE}'",
-      "cat '#{SPECIES_SQL_FILE}' | sqlite3 '#{SPECIES_DB_FILE}'"
+      'rm "#{SPECIES_DB_FILE}"',
+      'cat "#{SPECIES_SQL_FILE}" | sqlite3 "#{SPECIES_DB_FILE}"'
     ]
 
-    commands.each { |command| `#{command}` }
+    commands.each { |command| "#{command}" }
     DBConnection.open(SPECIES_DB_FILE)
   end
 
@@ -46,14 +46,14 @@ class DBConnection
 
   private
 
-  def self.print_query(query, *interpolation_args)
-    return unless PRINT_QUERIES
+    def self.print_query(query, *interpolation_args)
+      return unless PRINT_QUERIES
 
-    puts '--------------------'
-    puts query
-    unless interpolation_args.empty?
-      puts "interpolate: #{interpolation_args.inspect}"
+      puts '--------------------'
+      puts query
+      unless interpolation_args.empty?
+        puts "interpolate: #{interpolation_args.inspect}"
+      end
+      puts '--------------------'
     end
-    puts '--------------------'
-  end
 end
